@@ -25,6 +25,7 @@ body {
 header {
     background-color: #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    order: -1;
 }
 
 .logo {
@@ -67,38 +68,42 @@ nav a:hover {
 
 /* Haberler stillemeleri */
 .haberler {
-    background-color: #333;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: #333;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .haberler h2,
 .yeni-makale h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #eee;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #eee;
 }
 
 .haberler p,
 .yeni-makale p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    color: #ccc;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #ccc;
 }
 
 .haberler img,
-.yeni-makale img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    object-fit: contain; /* Eklediğimiz yeni stil */
+.haberler video,
+.yeni-makale img,
+.yeni-makale video {
+  display: block;
+  margin: 0 auto; /* Center horizontally */
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+
+
 
 iframe {
     overflow: hidden;
@@ -106,63 +111,21 @@ iframe {
 
 img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: auto;
   }
   
-@media (min-width: 320px) {
-  /* smartphones, iPhone, portrait 480x320 phones */
-  body {
-    font-size: 14px;
-  }
-
-  .container {
-    padding: 10px;
-  }
-
+/* Mobil cihazlar için */
+@media (max-width: 767px) {
   .logo {
     font-size: 20px;
   }
-
+  
   nav a {
-    padding: 8px;
-  }
-
-  .haberler {
-    padding: 10px;
+    padding: 6px;
+    font-size: 14px;
   }
 }
 
-@media (min-width: 481px) {
-  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-  .logo {
-    font-size: 22px;
-  }
-}
 
-@media (min-width: 641px) {
-  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-  .logo {
-    font-size: 24px;
-  }
-}
 
-@media (min-width: 961px) {
-  /* tablet, landscape iPad, lo-res laptops and desktops */
-  nav li {
-    margin: 0 15px;
-  }
-}
 
-@media (min-width: 1025px) {
-  /* big landscape tablets, laptops, and desktops */
-  .container {
-    padding: 30px;
-  }
-}
-
-@media (min-width: 1281px) {
-  /* hi-res laptops and desktops */
-  .container {
-    padding: 40px;
-  }
-}

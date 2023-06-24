@@ -1,37 +1,37 @@
-<script>
-    // Toplam sayfa sayısı
-    var totalPages = 10;
+const video = document.querySelector('#myVideo');
 
-    // Mevcut sayfa numarası
-    var currentPage = 1; // Bu değeri dinamik olarak güncelleyin
-
-    // Sayfalama bağlantılarını oluştur
-    var paginationContainer = document.createElement("div");
-    paginationContainer.className = "pagination";
-
-    for (var i = 1; i <= totalPages; i++) {
-        var link = document.createElement("a");
-        link.href = "index.html?page=" + i;
-        link.textContent = i;
-
-        if (i === currentPage) {
-            link.classList.add("current-page");
-        }
-
-        paginationContainer.appendChild(link);
+video.addEventListener('click', () => {
+  // tüm videoların durdurulması
+  const otherVideos = document.querySelectorAll('.video');
+  otherVideos.forEach((otherVideo) => {
+    if (otherVideo !== video) {
+      otherVideo.pause();
     }
-
-    document.body.appendChild(paginationContainer);
-
-// Tüm paylaş düğmelerini seçin
-var paylasDugmeleri = document.querySelectorAll('.paylas-btn');
-
-// Her bir paylaş düğmesi için olay dinleyicisi ekleme
-paylasDugmeleri.forEach(function(dugme) {
-  dugme.addEventListener('click', function() {
-    // Paylaşma işlemi burada gerçekleştirilebilir
-    // Örneğin, sosyal medya paylaşma işlemi yapılabilir veya özel bir paylaşma penceresi açılabilir
-    alert('Paylaş düğmesine tıklandı!');
   });
+  
+  // seçilen videonun oynatılması
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
 });
-</script>
+
+const video = document.querySelector('#myVideo2');
+
+video.addEventListener('click', () => {
+  // tüm videoların durdurulması
+  const otherVideos = document.querySelectorAll('.video');
+  otherVideos.forEach((otherVideo) => {
+    if (otherVideo !== video) {
+      otherVideo.pause();
+    }
+  });
+  
+  // seçilen videonun oynatılması
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+});
